@@ -1,0 +1,2 @@
+# Resolving conflicts in Git
+
