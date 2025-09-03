@@ -81,15 +81,56 @@
 
         <section id="conflicts" class="tab-content">
             <h2>Conflict Resolution</h2>
-            <p>Merge conflicts occur when different changes are made to the same lines of a file in different branches. Git flags these conflicts during the merge attempt, requiring manual intervention to resolve them.</p>
+            <p>Merge conflicts are a common part of collaborative development with Git. They occur when two branches have made changes to the same lines in a file, or when a file has been deleted in one branch and modified in another. Git cannot automatically decide which change to keep, so manual intervention is required.</p>
+            <p>Here is a step-by-step guide to identifying and resolving merge conflicts, including the main commands used:</p>
+            <ol>
+                <li>
+                    <strong>Attempt to merge branches:</strong><br>
+                    <code>git checkout main</code><br>
+                    <code>git pull origin main</code><br>
+                    <code>git merge feature/your-feature-name</code><br>
+                    Try to merge your feature branch into <code>main</code>. If there are conflicts, Git will notify you.
+                </li>
+                <li>
+                    <strong>Identify conflicting files:</strong><br>
+                    <code>git status</code><br>
+                    Lists the files with conflicts. Open these files to see conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).
+                </li>
+                <li>
+                    <strong>Manually resolve conflicts:</strong><br>
+                    Edit the conflicting files, choosing which changes to keep or combining them as needed. Remove the conflict markers after resolving.
+                </li>
+                <li>
+                    <strong>Mark conflicts as resolved:</strong><br>
+                    <code>git add &lt;file&gt;</code><br>
+                    Stage the resolved files.
+                </li>
+                <li>
+                    <strong>Complete the merge:</strong><br>
+                    <code>git commit</code><br>
+                    Finalize the merge. Git may auto-generate a commit message for the merge resolution.
+                </li>
+                <li>
+                    <strong>Push the resolved changes:</strong><br>
+                    <code>git push origin main</code><br>
+                    Update the remote repository with the resolved merge.
+                </li>
+            </ol>
+            <p>Tips:</p>
             <ul>
-                <li><strong>Identification:</strong> Git marks the conflicting files and indicates the conflicting lines.</li>
-                <li><strong>Resolution:</strong> The developer reviews the conflicting changes, chooses which to keep or combines the changes, and saves the corrected file.</li>
-                <li><strong>Finalization:</strong> After resolving the conflicts, the resolved files must be added and the merge completed.</li>
+                <li>Use <code>git log --merge</code> to see commits causing conflicts.</li>
+                <li>Graphical tools like VS Code, GitKraken, or <code>git mergetool</code> can help visualize and resolve conflicts.</li>
+                <li>Always test your code after resolving conflicts to ensure nothing is broken.</li>
             </ul>
-            <p>Carefully resolving conflicts is essential to ensure code integrity and avoid loss of work.</p>
+            <p>Careful conflict resolution is essential to maintain code integrity and team productivity.</p>
         </section>
 
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pedro Collares. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
