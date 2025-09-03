@@ -1,130 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio: Git and GitHub</title>
+    <!-- Added external CSS link -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Removed inline styles, kept only HTML structure -->
     <header>
         <div class="container">
-            <h1>Portfolio: Git and GitHub</h1>
+            <h1>Git and GitHub</h1>
         </div>
     </header>
+    
     <main>
-        
-        <nav class="tabs-vertical">
+        <nav class="tabs-horizontal">
             <ul>
-                <li><a href="#git" id="tab-git">Git and GitHub Concepts</a></li>
-                <li><a href="#flow" id="tab-flow">Branch and Pull Request Flow</a></li>
-                <li><a href="#conflicts" id="tab-conflicts">Conflict Resolution</a></li>
+                <li><a href="#git" id="tab-git" class="tab-link active">Git and GitHub Concepts</a></li>
+                <li><a href="#flow" id="tab-flow" class="tab-link">Branch and Pull Request Flow</a></li>
+                <li><a href="#conflicts" id="tab-conflicts" class="tab-link">Conflict Resolution</a></li>
             </ul>
         </nav>
 
-        <section id="git" class="tab-content">
-            <h2>Git and GitHub Concepts</h2>
-            <p><strong>Git</strong> is a distributed version control system designed to efficiently manage projects, allowing multiple developers to work simultaneously without overwriting each other's work. It records the history of changes, making it possible to revert modifications and compare versions.</p>
-            <p><strong>GitHub</strong> is a cloud-based platform that hosts Git repositories, facilitating collaboration, code review, issue tracking, and continuous integration. It enables teams to work together in an organized way, using features like Pull Requests, Issues, and Actions.</p>
-        </section>
+        <div class="content-area">
+            <section id="git" class="tab-content active">
+                <h2>Git and GitHub Concepts</h2>
+                <p><strong>Git</strong> is a distributed version control system designed to efficiently manage projects, allowing multiple developers to work simultaneously without overwriting each other's work. It records the history of changes, making it possible to revert modifications and compare versions.</p>
+                <p><strong>GitHub</strong> is a cloud-based platform that hosts Git repositories, facilitating collaboration, code review, issue tracking, and continuous integration. It enables teams to work together in an organized way, using features like Pull Requests, Issues, and Actions.</p>
+            </section>
 
-        <section id="flow" class="tab-content">
-            <h2>Branch and Pull Request Flow</h2>
-            <p>The workflow with <strong>branches</strong> is fundamental for collaborative development. It allows developers to work on new features, bug fixes, or experiments in isolation, without impacting the main codebase. This approach increases productivity, reduces conflicts, and keeps the main branch stable.</p>
-            <p>Below is a typical step-by-step guide for working with branches and Pull Requests (PRs) in Git and GitHub, including the main commands used at each stage:</p>
-            <ol>
-                <li>
-                    <strong>Update your local repository:</strong><br>
-                    <code>git pull origin main</code><br>
-                    Fetches and integrates the latest changes from the remote <code>main</code> branch.
-                </li>
-                <li>
-                    <strong>Create a new branch:</strong><br>
-                    <code>git checkout -b feature/your-feature-name</code><br>
-                    Creates and switches to a new branch for your work.
-                </li>
-                <li>
-                    <strong>Develop your feature or fix:</strong><br>
-                    Make your code changes, add new files, or modify existing ones as needed.
-                </li>
-                <li>
-                    <strong>Stage and commit your changes:</strong><br>
-                    <code>git add .</code><br>
-                    <code>git commit -m "Describe your changes here"</code><br>
-                    Stages and commits your modifications with a descriptive message.
-                </li>
-                <li>
-                    <strong>Push your branch to GitHub:</strong><br>
-                    <code>git push origin feature/your-feature-name</code><br>
-                    Uploads your branch and commits to the remote repository.
-                </li>
-                <li>
-                    <strong>Open a Pull Request (PR):</strong><br>
-                    Go to GitHub and open a PR from your branch to <code>main</code>. Describe your changes and request a review from your team.
-                </li>
-                <li>
-                    <strong>Review and address feedback:</strong><br>
-                    Team members review your PR. You may need to make additional commits to address comments.
-                </li>
-                <li>
-                    <strong>Merge the PR:</strong><br>
-                    Once approved, the PR is merged into <code>main</code> (either via GitHub or using <code>git merge</code> locally).
-                </li>
-                <li>
-                    <strong>Delete the feature branch (optional):</strong><br>
-                    <code>git branch -d feature/your-feature-name</code><br>
-                    <code>git push origin --delete feature/your-feature-name</code><br>
-                    Cleans up your local and remote branches after merging.
-                </li>
-            </ol>
-            <p>This step-by-step flow ensures that development is organized, traceable, and that the main branch remains production-ready. Using branches and PRs also facilitates code review, continuous integration, and collaborative problem-solving.</p>
-        </section>
+            <section id="flow" class="tab-content">
+                <h2>Branch and Pull Request Flow</h2>
+                <p>The workflow with <strong>branches</strong> is fundamental for collaborative development. It allows developers to work on new features, bug fixes, or experiments in isolation, without impacting the main codebase. This approach increases productivity, reduces conflicts, and keeps the main branch stable.</p>
+                <p>Below is a typical step-by-step guide for working with branches and Pull Requests (PRs) in Git and GitHub, including the main commands used at each stage:</p>
+                <ol>
+                    <li>
+                        <strong>Update your local repository:</strong><br>
+                        <code>git pull origin main</code><br>
+                        Fetches and integrates the latest changes from the remote <code>main</code> branch.
+                    </li>
+                    <li>
+                        <strong>Create a new branch:</strong><br>
+                        <code>git checkout -b feature/your-feature-name</code><br>
+                        Creates and switches to a new branch for your work.
+                    </li>
+                    <li>
+                        <strong>Develop your feature or fix:</strong><br>
+                        Make your code changes, add new files, or modify existing ones as needed.
+                    </li>
+                    <li>
+                        <strong>Stage and commit your changes:</strong><br>
+                        <code>git add .</code><br>
+                        <code>git commit -m "Describe your changes here"</code><br>
+                        Stages and commits your modifications with a descriptive message.
+                    </li>
+                    <li>
+                        <strong>Push your branch to GitHub:</strong><br>
+                        <code>git push origin feature/your-feature-name</code><br>
+                        Uploads your branch and commits to the remote repository.
+                    </li>
+                    <li>
+                        <strong>Open a Pull Request (PR):</strong><br>
+                        Go to GitHub and open a PR from your branch to <code>main</code>. Describe your changes and request a review from your team.
+                    </li>
+                    <li>
+                        <strong>Review and address feedback:</strong><br>
+                        Team members review your PR. You may need to make additional commits to address comments.
+                    </li>
+                    <li>
+                        <strong>Merge the PR:</strong><br>
+                        Once approved, the PR is merged into <code>main</code> (either via GitHub or using <code>git merge</code> locally).
+                    </li>
+                    <li>
+                        <strong>Delete the feature branch (optional):</strong><br>
+                        <code>git branch -d feature/your-feature-name</code><br>
+                        <code>git push origin --delete feature/your-feature-name</code><br>
+                        Cleans up your local and remote branches after merging.
+                    </li>
+                </ol>
+                <p>This step-by-step flow ensures that development is organized, traceable, and that the main branch remains production-ready. Using branches and PRs also facilitates code review, continuous integration, and collaborative problem-solving.</p>
+            </section>
 
-        <section id="conflicts" class="tab-content">
-            <h2>Conflict Resolution</h2>
-            <p>Merge conflicts are a common part of collaborative development with Git. They occur when two branches have made changes to the same lines in a file, or when a file has been deleted in one branch and modified in another. Git cannot automatically decide which change to keep, so manual intervention is required.</p>
-            <p>Here is a step-by-step guide to identifying and resolving merge conflicts, including the main commands used:</p>
-            <ol>
-                <li>
-                    <strong>Attempt to merge branches:</strong><br>
-                    <code>git checkout main</code><br>
-                    <code>git pull origin main</code><br>
-                    <code>git merge feature/your-feature-name</code><br>
-                    Try to merge your feature branch into <code>main</code>. If there are conflicts, Git will notify you.
-                </li>
-                <li>
-                    <strong>Identify conflicting files:</strong><br>
-                    <code>git status</code><br>
-                    Lists the files with conflicts. Open these files to see conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).
-                </li>
-                <li>
-                    <strong>Manually resolve conflicts:</strong><br>
-                    Edit the conflicting files, choosing which changes to keep or combining them as needed. Remove the conflict markers after resolving.
-                </li>
-                <li>
-                    <strong>Mark conflicts as resolved:</strong><br>
-                    <code>git add &lt;file&gt;</code><br>
-                    Stage the resolved files.
-                </li>
-                <li>
-                    <strong>Complete the merge:</strong><br>
-                    <code>git commit</code><br>
-                    Finalize the merge. Git may auto-generate a commit message for the merge resolution.
-                </li>
-                <li>
-                    <strong>Push the resolved changes:</strong><br>
-                    <code>git push origin main</code><br>
-                    Update the remote repository with the resolved merge.
-                </li>
-            </ol>
-            <p>Tips:</p>
-            <ul>
-                <li>Use <code>git log --merge</code> to see commits causing conflicts.</li>
-                <li>Graphical tools like VS Code, GitKraken, or <code>git mergetool</code> can help visualize and resolve conflicts.</li>
-                <li>Always test your code after resolving conflicts to ensure nothing is broken.</li>
-            </ul>
-            <p>Careful conflict resolution is essential to maintain code integrity and team productivity.</p>
-        </section>
-
+            <section id="conflicts" class="tab-content">
+                <h2>Conflict Resolution</h2>
+                <p>Merge conflicts are a common part of collaborative development with Git. They occur when two branches have made changes to the same lines in a file, or when a file has been deleted in one branch and modified in another. Git cannot automatically decide which change to keep, so manual intervention is required.</p>
+                <p>Here is a step-by-step guide to identifying and resolving merge conflicts, including the main commands used:</p>
+                <ol>
+                    <li>
+                        <strong>Attempt to merge branches:</strong><br>
+                        <code>git checkout main</code><br>
+                        <code>git pull origin main</code><br>
+                        <code>git merge feature/your-feature-name</code><br>
+                        Try to merge your feature branch into <code>main</code>. If there are conflicts, Git will notify you.
+                    </li>
+                    <li>
+                        <strong>Identify conflicting files:</strong><br>
+                        <code>git status</code><br>
+                        Lists the files with conflicts. Open these files to see conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).
+                    </li>
+                    <li>
+                        <strong>Manually resolve conflicts:</strong><br>
+                        Edit the conflicting files, choosing which changes to keep or combining them as needed. Remove the conflict markers after resolving.
+                    </li>
+                    <li>
+                        <strong>Mark conflicts as resolved:</strong><br>
+                        <code>git add &lt;file&gt;</code><br>
+                        Stage the resolved files.
+                    </li>
+                    <li>
+                        <strong>Complete the merge:</strong><br>
+                        <code>git commit</code><br>
+                        Finalize the merge. Git may auto-generate a commit message for the merge resolution.
+                    </li>
+                    <li>
+                        <strong>Push the resolved changes:</strong><br>
+                        <code>git push origin main</code><br>
+                        Update the remote repository with the resolved merge.
+                    </li>
+                </ol>
+                <p>Tips:</p>
+                <ul>
+                    <li>Use <code>git log --merge</code> to see commits causing conflicts.</li>
+                    <li>Graphical tools like VS Code, GitKraken, or <code>git mergetool</code> can help visualize and resolve conflicts.</li>
+                    <li>Always test your code after resolving conflicts to ensure nothing is broken.</li>
+                </ul>
+                <p>Careful conflict resolution is essential to maintain code integrity and team productivity.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -132,5 +136,8 @@
             <p>&copy; 2025 Pedro Collares. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Added external JavaScript file -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
