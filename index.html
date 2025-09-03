@@ -3,22 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git and Github Concepts</title>
+    <title>Portfolio: Git and GitHub</title>
 </head>
 <body>
-
     <header>
         <div class="container">
-            <h1>Git and Github</h1>
-            <nav>
-                <ul>
-                    <li><a href="#git">Git and GitHub concepts</a></li>
-                    <li><a href="#github">Git and GitHub Flow</a></li>
-                    <li><a href="#concepts">Resolving conflicts</a></li>
-                </ul>
-            </nav>
+            <h1>Portfolio: Git and GitHub</h1>
         </div>
     </header>
-    
+    <main>
+        
+        <nav class="tabs-vertical">
+            <ul>
+                <li><a href="#git" id="tab-git">Git and GitHub Concepts</a></li>
+                <li><a href="#flow" id="tab-flow">Branch and Pull Request Flow</a></li>
+                <li><a href="#conflicts" id="tab-conflicts">Conflict Resolution</a></li>
+            </ul>
+        </nav>
+
+        <section id="git" class="tab-content">
+            <h2>Git and GitHub Concepts</h2>
+            <p><strong>Git</strong> is a distributed version control system designed to efficiently manage projects, allowing multiple developers to work simultaneously without overwriting each other's work. It records the history of changes, making it possible to revert modifications and compare versions.</p>
+            <p><strong>GitHub</strong> is a cloud-based platform that hosts Git repositories, facilitating collaboration, code review, issue tracking, and continuous integration. It enables teams to work together in an organized way, using features like Pull Requests, Issues, and Actions.</p>
+        </section>
+
+        <section id="flow" class="tab-content">
+            <h2>Branch and Pull Request Flow</h2>
+            <p>The workflow with <strong>branches</strong> is fundamental for collaborative development. It allows developers to work on new features, bug fixes, or experiments in isolation, without impacting the main codebase. This approach increases productivity, reduces conflicts, and keeps the main branch stable.</p>
+            <p>Below is a typical step-by-step guide for working with branches and Pull Requests (PRs) in Git and GitHub, including the main commands used at each stage:</p>
+            <ol>
+                <li>
+                    <strong>Update your local repository:</strong><br>
+                    <code>git pull origin main</code><br>
+                    Fetches and integrates the latest changes from the remote <code>main</code> branch.
+                </li>
+                <li>
+                    <strong>Create a new branch:</strong><br>
+                    <code>git checkout -b feature/your-feature-name</code><br>
+                    Creates and switches to a new branch for your work.
+                </li>
+                <li>
+                    <strong>Develop your feature or fix:</strong><br>
+                    Make your code changes, add new files, or modify existing ones as needed.
+                </li>
+                <li>
+                    <strong>Stage and commit your changes:</strong><br>
+                    <code>git add .</code><br>
+                    <code>git commit -m "Describe your changes here"</code><br>
+                    Stages and commits your modifications with a descriptive message.
+                </li>
+                <li>
+                    <strong>Push your branch to GitHub:</strong><br>
+                    <code>git push origin feature/your-feature-name</code><br>
+                    Uploads your branch and commits to the remote repository.
+                </li>
+                <li>
+                    <strong>Open a Pull Request (PR):</strong><br>
+                    Go to GitHub and open a PR from your branch to <code>main</code>. Describe your changes and request a review from your team.
+                </li>
+                <li>
+                    <strong>Review and address feedback:</strong><br>
+                    Team members review your PR. You may need to make additional commits to address comments.
+                </li>
+                <li>
+                    <strong>Merge the PR:</strong><br>
+                    Once approved, the PR is merged into <code>main</code> (either via GitHub or using <code>git merge</code> locally).
+                </li>
+                <li>
+                    <strong>Delete the feature branch (optional):</strong><br>
+                    <code>git branch -d feature/your-feature-name</code><br>
+                    <code>git push origin --delete feature/your-feature-name</code><br>
+                    Cleans up your local and remote branches after merging.
+                </li>
+            </ol>
+            <p>This step-by-step flow ensures that development is organized, traceable, and that the main branch remains production-ready. Using branches and PRs also facilitates code review, continuous integration, and collaborative problem-solving.</p>
+        </section>
+
+        <section id="conflicts" class="tab-content">
+            <h2>Conflict Resolution</h2>
+            <p>Merge conflicts occur when different changes are made to the same lines of a file in different branches. Git flags these conflicts during the merge attempt, requiring manual intervention to resolve them.</p>
+            <ul>
+                <li><strong>Identification:</strong> Git marks the conflicting files and indicates the conflicting lines.</li>
+                <li><strong>Resolution:</strong> The developer reviews the conflicting changes, chooses which to keep or combines the changes, and saves the corrected file.</li>
+                <li><strong>Finalization:</strong> After resolving the conflicts, the resolved files must be added and the merge completed.</li>
+            </ul>
+            <p>Carefully resolving conflicts is essential to ensure code integrity and avoid loss of work.</p>
+        </section>
+
+    </main>
 </body>
 </html>
